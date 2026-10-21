@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jual Beli Mobil Bekas Bekasi Kota | BEKASI AUTO SELECT</title>
+<meta name="description" content="Dealer mobil bekas Bekasi Kota: lihat informasi unit, bandingkan harga, lalu jadwalkan test drive. Mobil bekas keluarga, harian, dan usaha.">
+<meta property="og:title" content="BEKASI AUTO SELECT – Mobil Bekas Bekasi Kota">
+<meta property="og:description" content="Temukan mobil bekas yang tepat untuk perjalanan Anda.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b1730'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='%23ff7a1a' font-family='Arial' font-weight='700'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutoDealer","name":"BEKASI AUTO SELECT","areaServed":"Bekasi Kota, Jawa Barat, Indonesia"}</script>
+</head>
+<body>
+<a class="skip" href="#katalog">Lewati ke katalog</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#beranda" class="logo" data-brand>BEKASI AUTO SELECT</a>
+    <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <nav id="menu" class="menu" aria-label="Navigasi utama">
+      <a href="#beranda">Beranda</a><a href="#katalog">Katalog Mobil</a><a href="#keunggulan">Keunggulan</a><a href="#cara-membeli">Cara Membeli</a><a href="#kontak">Kontak</a>
+      <button class="btn btn-accent" data-wa-general>Konsultasi WhatsApp</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="beranda">
+  <div class="wrap hero-in">
+    <div class="hero-txt">
+      <span class="badge">Pilihan Mobil untuk Berbagai Kebutuhan</span>
+      <h1>Temukan Mobil Bekas yang Tepat untuk Perjalanan Anda.</h1>
+      <p>Pilihan mobil bekas untuk kebutuhan harian, keluarga, dan usaha. Lihat informasi unit, bandingkan harga, lalu jadwalkan test drive.</p>
+      <div class="actions"><a href="#katalog" class="btn btn-accent">Jelajahi Mobil</a><button class="btn btn-ghost" data-wa-general>Konsultasi Gratis</button></div>
+      <ul class="chips"><li>Mobil Keluarga</li><li>Mobil Harian</li><li>Mobil Usaha</li></ul>
+    </div>
+    <div class="hero-art" aria-hidden="true" id="heroArt"></div>
+  </div>
+</section>
+
+<section class="wrap search-wrap" aria-label="Pencarian kendaraan">
+  <form class="search" id="searchForm">
+    <label>Merek / model<input id="f-q" type="search" placeholder="mis. Avanza"></label>
+    <label>Harga min (juta Rp)<input id="f-min" type="number" min="0" inputmode="numeric" placeholder="0"></label>
+    <label>Harga maks (juta Rp)<input id="f-max" type="number" min="0" inputmode="numeric" placeholder="Tanpa batas"></label>
+    <label>Tahun min<select id="f-year"></select></label>
+    <label>Transmisi<select id="f-trans"><option value="">Semua</option><option>Manual</option><option>Otomatis</option></select></label>
+    <label>Kategori<select id="f-cat"><option value="">Semua</option><option value="keluarga">Mobil Keluarga</option><option value="harian">Mobil Harian</option><option value="usaha">Mobil Usaha</option></select></label>
+    <button class="btn btn-accent" type="submit">Cari Mobil</button>
+  </form>
+</section>
+
+<section class="sec" id="katalog">
+  <div class="wrap">
+    <div class="demo-note" role="note"><strong>Data demo:</strong> seluruh unit, harga, tahun, dan kilometer di bawah ini hanya contoh dan bukan inventaris nyata.</div>
+    <h2>Temukan Mobil Pilihan Anda</h2>
+    <p class="lead">Bandingkan pilihan kendaraan berdasarkan harga, tahun, transmisi, dan kebutuhan Anda.</p>
+    <div class="toolbar">
+      <p id="count" aria-live="polite"></p>
+      <label>Urutkan <select id="sort"><option value="">Default</option><option value="price-asc">Harga terendah</option><option value="price-desc">Harga tertinggi</option><option value="year-desc">Tahun terbaru</option></select></label>
+      <button class="btn btn-ghost dark" id="resetBtn" type="button">Reset Filter</button>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden><h3>Tidak ada unit yang cocok</h3><p>Coba ubah kata kunci atau rentang harga Anda.</p><button class="btn btn-accent" id="emptyReset">Hapus Filter</button></div>
+  </div>
+</section>
+
+<section class="sec alt" id="kebutuhan">
+  <div class="wrap">
+    <h2>Mobil yang Sesuai dengan Kebutuhan Anda</h2>
+    <div class="cols3">
+      <article class="card reveal"><div class="ico">👨‍👩‍👧</div><h3>Mobil Keluarga</h3><p>Jelajahi pilihan kendaraan dengan kabin yang sesuai untuk aktivitas bersama keluarga.</p><button class="btn btn-ghost dark" data-cat="keluarga">Lihat Pilihan</button></article>
+      <article class="card reveal"><div class="ico">🚦</div><h3>Mobil Harian</h3><p>Cari kendaraan praktis untuk menunjang aktivitas dan perjalanan sehari-hari.</p><button class="btn btn-ghost dark" data-cat="harian">Lihat Pilihan</button></article>
+      <article class="card reveal"><div class="ico">📦</div><h3>Mobil Usaha</h3><p>Temukan kendaraan yang dapat dipertimbangkan untuk mendukung operasional usaha.</p><button class="btn btn-ghost dark" data-cat="usaha">Lihat Pilihan</button></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="keunggulan">
+  <div class="wrap">
+    <h2>Membeli Mobil Bekas dengan Informasi yang Lebih Jelas</h2>
+    <p class="lead">Standar layanan yang ingin kami tawarkan kepada calon pembeli.</p>
+    <div class="cols4">
+      <article class="card reveal"><div class="ico">📋</div><h3>Informasi unit transparan</h3><p>Data unit ditampilkan apa adanya; yang belum tersedia kami tandai jelas.</p></article>
+      <article class="card reveal"><div class="ico">💬</div><h3>Konsultasi sesuai kebutuhan</h3><p>Ceritakan kebutuhan dan anggaran, lalu diskusikan pilihan yang relevan.</p></article>
+      <article class="card reveal"><div class="ico">🔑</div><h3>Test drive berdasarkan jadwal</h3><p>Atur jadwal kunjungan agar Anda dapat mencoba unit dengan nyaman.</p></article>
+      <article class="card reveal"><div class="ico">🧾</div><h3>Bantuan informasi pembelian</h3><p>Dapatkan penjelasan alur pembelian dan dokumen yang perlu diperiksa.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="cara-membeli">
+  <div class="wrap">
+    <h2>Cara Membeli</h2>
+    <ol class="steps">
+      <li class="reveal"><span>1</span><h3>Pilih kendaraan</h3><p>Gunakan pencarian dan filter di katalog.</p></li>
+      <li class="reveal"><span>2</span><h3>Hubungi tim penjualan</h3><p>Tanyakan detail unit yang Anda minati.</p></li>
+      <li class="reveal"><span>3</span><h3>Jadwalkan kunjungan</h3><p>Atur waktu kunjungan atau test drive.</p></li>
+      <li class="reveal"><span>4</span><h3>Periksa &amp; putuskan</h3><p>Periksa kondisi dan dokumen, lanjutkan transaksi jika sesuai.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap narrow">
+    <h2>Pertanyaan yang Sering Diajukan</h2>
+    <div id="faqList"></div>
+  </div>
+</section>
+
+<section class="cta" id="kontak">
+  <div class="wrap cta-in">
+    <div>
+      <h2>Masih Bingung Memilih Mobil Bekas?</h2>
+      <p>Ceritakan kebutuhan dan anggaran Anda. Mulai konsultasi untuk menemukan pilihan kendaraan yang sesuai.</p>
+      <button class="btn btn-accent" data-wa-general>Konsultasi via WhatsApp</button>
+    </div>
+    <form class="cform" id="consultForm" novalidate>
+      <label>Nama<input id="c-name" required autocomplete="name"><small class="err" id="e-name"></small></label>
+      <label>Nomor WhatsApp<input id="c-phone" type="tel" inputmode="tel" required autocomplete="tel" placeholder="08123456789"><small class="err" id="e-phone"></small></label>
+      <label>Kebutuhan kendaraan<select id="c-need"><option value="">Pilih…</option><option>Mobil keluarga</option><option>Mobil harian</option><option>Mobil usaha</option></select><small class="err" id="e-need"></small></label>
+      <label>Rentang anggaran<select id="c-budget"><option value="">Pilih…</option><option>Di bawah Rp100 juta</option><option>Rp100–150 juta</option><option>Rp150–200 juta</option><option>Di atas Rp200 juta</option></select><small class="err" id="e-budget"></small></label>
+      <label>Metode pembayaran<select id="c-pay"><option value="">Pilih…</option><option>Tunai</option><option>Kredit</option><option>Belum tahu</option></select><small class="err" id="e-pay"></small></label>
+      <button class="btn btn-accent" type="submit">Lanjut ke WhatsApp</button>
+      <p class="hint">Data tidak disimpan di server. Pesan baru terkirim setelah Anda menekan “Kirim” di WhatsApp.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div><strong data-brand>BEKASI AUTO SELECT</strong><p>Informasi mobil bekas untuk kebutuhan harian, keluarga, dan usaha.</p></div>
+    <nav aria-label="Navigasi footer"><a href="#katalog">Katalog</a><a href="#keunggulan">Keunggulan</a><a href="#cara-membeli">Cara Membeli</a><a href="#faq">FAQ</a></nav>
+    <ul id="contactList"></ul>
+  </div>
+  <p class="copy" id="copy"></p>
+</footer>
+
+<button id="toTop" class="totop" aria-label="Kembali ke atas" hidden>↑</button>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<div class="modal" id="modal" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <button class="close" id="mClose" aria-label="Tutup detail">✕</button>
+    <div class="gal"><div class="gal-main" id="mGal"></div><div class="thumbs" id="mThumbs"></div></div>
+    <div class="info" id="mInfo"></div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
